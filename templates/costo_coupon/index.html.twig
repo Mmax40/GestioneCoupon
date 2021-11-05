@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CostoCouponController!{% endblock %}
+
+{% block body %}
+{{form_start(FormCostoCoupon)}}
+{{form_rest(FormCostoCoupon)}}
+<input type='submit' class='bnt bnt-primary'>
+{{form_end(FormCostoCoupon)}}
+
+
+<div>
+<h1> Costo Coupon lista </h1>
+{% for All in FormAll %}
+<div class="row">
+<div class="col-19 offset-1">
+<p>Prezzo Coupon{{ All.prezzocoupon }} Cocide Coupon {{ All.codicecoupon }}</p>
+</div>
+</div>
+{% endfor %}
+</div>
+
+<div>
+<h1> form primo array  </h1>
+<div class="row">
+<div class="col-19 offset-1">
+
+<p>{{ FormOne.prezzocoupon }}</p>
+
+</div>
+</div>
+</div>
+
+<div>
+<h1> form cerca per 50 euro</h1>
+{% for All in FormOneBy %}
+<div class="row">
+<div class="col-19 offset-1">
+
+<p>{{ All.prezzocoupon }}</p> 
+
+{% endfor %}
+
+{% endblock %}

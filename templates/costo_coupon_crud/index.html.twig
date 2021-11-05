@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Costocoupon index{% endblock %}
+
+{% block body %}
+    <h1>Prezzi assegnati ai coupon</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prezzocoupon</th>
+                <th>Note</th>
+                <th>Codicecoupon</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for costocoupon in costocoupons %}
+            <tr>
+                <td>{{ costocoupon.id }}</td>
+                <td>{{ costocoupon.prezzocoupon }}</td>
+                <td>{{ costocoupon.note }}</td>
+                <td>{{ costocoupon.codicecoupon }}</td>
+                <td>
+                    <a href="{{ path('costo_coupon_crud_show', {'id': costocoupon.id}) }}">Visualizza</a>
+                    <a href="{{ path('costo_coupon_crud_edit', {'id': costocoupon.id}) }}">Modifica</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('costo_coupon_crud_new') }}">Crea nuovo</a>
+{% endblock %}

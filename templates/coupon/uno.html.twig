@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mondo Scuola{% endblock %}
+
+{% block body %}
+<h1> {{Coupon.submissionCode}} </h1>
+<p>data di creazione: {{Coupon.timecreated}} <p>
+<p>data di modifica: {{Coupon.timemodified}} <p>
+<p>data di scadenza: {{Coupon.timeexpired}} <p>
+<p>data  usato: {{Coupon.timeclaimed}} <p>
+<hr>
+
+{% endblock %}

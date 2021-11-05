@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New MdlCourse{% endblock %}
+
+{% block body %}
+    <h1>Create new MdlCourse</h1>
+
+    {{ include('mdl_course/_form.html.twig') }}
+
+    <a href="{{ path('mdl_course_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,3 @@
+[02-Nov-2021 14:39:04 Europe/Berlin] PHP Parse error:  syntax error, unexpected '?' in /home/gcodfsrx/gestionale.agatosservice.it/vendor/autoload_runtime.php on line 21
+[02-Nov-2021 13:47:15 UTC] 2021-11-02T13:47:15+00:00 [critical] Uncaught Error: Class 'Symfony\Bundle\WebProfilerBundle\WebProfilerBundle' not found
+[02-Nov-2021 14:51:08 Europe/Berlin] PHP Parse error:  syntax error, unexpected '?' in /home/gcodfsrx/gestionale.agatosservice.it/vendor/autoload_runtime.php on line 21

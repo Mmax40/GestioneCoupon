@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Costocoupon{% endblock %}
+
+{% block body %}
+    <h1>Modifica Prezzo Coupon</h1>
+
+    {{ include('costo_coupon_crud/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('costo_coupon_crud_index') }}">Lista</a>
+
+    {{ include('costo_coupon_crud/_delete_form.html.twig') }}
+{% endblock %}

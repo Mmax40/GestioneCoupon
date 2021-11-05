@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UtentiMoodleController!{% endblock %}
+
+{% block body %}
+ {# inizializza il form, {{ form_start (form)}}  aggiungo la eliminazione del controllo html5 {{ form_start (form, {'attr':{'novalidate':'novalidate'}})}} 
+ posso mettere anche la action, si può fare anche lato controller {{ form_start (form, {'attr':{'novalidate':'novalidate', path('utenti_moodle_Inserisci')}})}} 
+ #}
+{{ form_start (form, {'attr':{'novalidate':'novalidate'}})}} 
+
+
+{# form recupero un solo elemento, metodo 1, {{form_row (form.username)}} questo contiene già div, error, label, widget  #}
+{# <div>
+{{form_label (form.username)}}
+{{form_errors (form.username)}}
+{{form_widget (form.username)}}
+</div>  #}
+
+{{form_row (form.username)}}
+
+{# {{ form_widget (form)}} {# fa vedere tutto il form, sotto isolo solo quelli che mi interessano, ovviamente devo eliminare questo #}
+<button type ="submit">salva</button>
+{# {{ form_end (form)}}  fa vedere il resto del form, cioè quelli non selezionati singolarmente e senza il widget #}
+{% endblock %}

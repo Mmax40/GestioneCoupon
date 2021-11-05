@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+
+
+{# <div style='overflow-x:scroll;overflow-y:hidden'> ;width:250px;height:200px #}
+ 								
+
+ <div class="card radius-10">
+ <div class="card-body">
+ <div class="d-flex align-items-center">
+ <div>
+ <h5 class="mb-0">Dettaglio Anagrafica Utente Wordpress</h5>
+ </div>
+ <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
+ </div>
+ </div>
+ <hr>
+ <div class="table-responsive">
+								
+
+
+ 
+<div style='overflow-x:scroll;overflow-y:hidden'>
+
+<table class="table">
+<thead>
+<tr>
+<th>Id</th>
+<th>Nome</th>
+<th>Cognome</th>
+<th>Indirizzo1</th>
+<th>Citta</th>
+<th>Stato</th>
+<th>Cap</th>
+<th>Nazione</th>
+<th>Email</th>
+<th>Tel</th>
+<th>Cap2</th>
+<th>CodFiscale</th>
+<th>Citta2</th>
+<th>NumIscrizioneAlbo</th>
+<th>ProvIscrizioneAlbo</th>
+<th>CodiceAteco</th>
+<th>Metodo di Pagamento</th>
+<th>Prezzo</th>
+</tr>
+</thead>
+<tbody>
+ {% for riga in id %}
+                  <tr>
+                <td>{{ riga.Id }}</td>
+                <td>{{ riga.nome }}</td>
+                <td>{{ riga.cognome }}</td>
+                <td>{{ riga.indirizzo1 }}</td>
+                <td>{{ riga.citta }}</td>
+                <td>{{ riga.stato }}</td>
+                <td>{{ riga.cap }}</td>
+                <td>{{ riga.nazione }}</td>
+                <td>{{ riga.email}}</td>
+                <td>{{ riga.tel }}</td>
+                <td>{{ riga.cap2 }}</td>
+                <td>{{ riga.codfiscale }}</td>
+                <td>{{ riga.citta2 }}</td>
+                <td>{{ riga.numiscrizionealbo }}</td>
+                <td>{{ riga.proviscrizionealbo }}</td>
+                <td>{{ riga.codiceateco }}</td>
+                <td>{{ riga.MetodoPagamento }}</td>
+                <td>{{ riga.Prezzo }}</td>
+         </tr>
+           {% endfor %}
+</tbody>
+</table>
+  
+</div>
+ </div>
+ </div>
+
+
+</div>
+
+
+
+
+ </div>
+ </div>
+ </div>
+{% endblock %}
+

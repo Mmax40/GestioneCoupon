@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mondo Scuola{% endblock %}
+
+{% block body %}
+<table class="table table-striped">
+<tr>
+<th>user id </th>
+<th>admnin </th>
+<th>Coupon </th>
+<th>Azione</th>
+</tr>
+{% for Coupon in Coup %}
+<tr>
+<td>{{Coupon.userid}}</td>
+<td>{{Coupon.ownerid}}</td>
+<td>{{Coupon.submissionCode}}</td>
+<td> <a href="/coup/{{Coupon.userid}}" class="btn btn-dark">Visualizza</a>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

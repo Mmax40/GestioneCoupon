@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+{{form_start(formCar)}}
+{{form_rest(formCar)}}
+<input type='submit' class='bnt bnt-primary'>
+{{form_end(formCar)}}
+
+
+
+
+
+<!-- stampo i 3 tipi di query stabilite del controller-->
+
+<div>
+<h1> CAR LIST </h1>
+{% for car in cars %}
+<div class="row">
+<div class="col-19 offset-1">
+
+<p>{{ car.name }}</p>
+
+</div>
+</div>
+{% endfor %}
+</div>
+
+<div>
+<h1> CAR ONE </h1>
+<div class="row">
+<div class="col-19 offset-1">
+
+<p>{{ carOne.name }}</p>
+
+</div>
+</div>
+</div>
+
+<div>
+<h1> CAR FIAT </h1>
+{% for car in carFiat %}
+<div class="row">
+<div class="col-19 offset-1">
+
+<p>{{ carFiat.name }}</p>
+{% endfor %}
+
+</div>
+</div>
+</div>
+
+{% endblock %}
+

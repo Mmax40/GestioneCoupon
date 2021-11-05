@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ public/index.php?$1 [L,QSA]
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{HTTP_HOST} ^(www.)?gestionale.agatosservice.it$
+
+#RewriteRule ^index\.php$ - [L]
+#RewriteRule . /index.php [L]
+</IfModule>
+
+#<Directory />
+#Satisfy Any
+#Allow from all
+#</Directory>
+
+
+
+
+

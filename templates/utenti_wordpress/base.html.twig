@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+{# <div style='overflow-x:scroll;overflow-y:hidden'> ;width:250px;height:200px #}
+
+ <div class="card radius-10">
+ <div class="card-body">
+ <div class="d-flex align-items-center">
+ <div>
+ <h5 class="mb-0">Ricerca</h5>
+ </div>
+ <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
+ </div>
+ </div>
+ <hr>
+ <div class="table-responsive">
+								
+
+ </div>
+ </div>
+ </div>
+
+ 
+
+ <div class="card radius-10">
+						<div class="card-body">
+							<div class="d-flex align-items-center">
+								<div>
+									<h5 class="mb-0">Importati da Wordpress</h5>
+								</div>
+								<div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
+								<a href="/Wordpress/leggi.php">Aggiorna da Wordpress </a>
+								</div>
+							</div>
+							<hr>
+							<div class="table-responsive">
+								
+<table class="table">
+<thead>
+<tr>
+<th>Dettagli</th>
+<th>Iscrivi</th>
+<th>Nome</th>
+<th>Cognome</th>
+<th>Email</th>
+<th>Metodo di Pagamento</th>
+<th>Prezzo</th>
+<th>Corso</th>
+</tr>
+</thead>
+<tbody>
+        {% for riga in UtentiWordpress %}
+            <tr>
+			 	<td> <a href="/UtentiWpSingolo/{{riga.Id }}" class="btn btn-success">Anagrafica</a>
+				 <td> <a href="/inserimento/{{riga.nome }}" class="btn btn-danger">Iscrivi su Moodle</a>
+                <td>{{ riga.nome }}</td>
+                <td>{{ riga.cognome }}</td>
+                <td>{{ riga.email }}</td>
+                <td>{{ riga.MetodoPagamento }}</td>
+                <td>{{ riga.Prezzo }}</td>
+                <td>{{ riga.Corso }}</td>
+        {% endfor %}
+        </tr>
+</tbody>
+</table>
+							</div>
+						</div>
+					</div>
+
+
+{% endblock %}
+

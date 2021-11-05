@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContattoController!{% endblock %}
+
+{% block body %}
+{{form_start(formContatto)}}
+{{form_rest(formContatto)}}
+<input type='submit' class='bnt bnt-primary'>
+{{form_end(formContatto)}}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Costocoupon{% endblock %}
+
+{% block body %}
+    <h1>Inserisci nuovo prezzo coupon</h1>
+
+    {{ include('costo_coupon_crud/_form.html.twig') }}
+
+    <a href="{{ path('costo_coupon_crud_index') }}">Lista</a>
+{% endblock %}

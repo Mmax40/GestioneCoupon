@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mondo Scuola{% endblock %}
+
+{% block body %}
+<table class="table table-striped">
+<tr>
+<th>id </th>
+<th>Coupon </th>
+<th>Corso </th>
+</tr>
+{% for Riga in corsomoodle %}
+<tr>
+<td>{{Riga.id}}</td>
+ <td><a href="/corsomoodle/{{Riga.id}}">{{Riga.fullname}}</a></td>
+{#<td>{{Riga.shortname}}</td> #}
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

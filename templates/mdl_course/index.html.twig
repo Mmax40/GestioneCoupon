@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MdlCourse index{% endblock %}
+
+{% block body %}
+    <h1>MdlCourse index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Category</th>
+                <th>Sortorder</th>
+                <th>Fullname</th>
+                <th>Shortname</th>
+                <th>Idnumber</th>
+                <th>Summary</th>
+                <th>Summaryformat</th>
+                <th>Format</th>
+                <th>Showgrades</th>
+                <th>Newsitems</th>
+                <th>Startdate</th>
+                <th>Marker</th>
+                <th>Maxbytes</th>
+                <th>Legacyfiles</th>
+                <th>Showreports</th>
+                <th>Visible</th>
+                <th>Visibleold</th>
+                <th>Groupmode</th>
+                <th>Groupmodeforce</th>
+                <th>Defaultgroupingid</th>
+                <th>Lang</th>
+                <th>Calendartype</th>
+                <th>Theme</th>
+                <th>Timecreated</th>
+                <th>Timemodified</th>
+                <th>Requested</th>
+                <th>Enablecompletion</th>
+                <th>Completionnotify</th>
+                <th>Cacherev</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mdl_course in mdl_courses %}
+            <tr>
+                <td>{{ mdl_course.id }}</td>
+                <td>{{ mdl_course.category }}</td>
+                <td>{{ mdl_course.sortorder }}</td>
+                <td>{{ mdl_course.fullname }}</td>
+                <td>{{ mdl_course.shortname }}</td>
+                <td>{{ mdl_course.idnumber }}</td>
+                <td>{{ mdl_course.summary }}</td>
+                <td>{{ mdl_course.summaryformat ? 'Yes' : 'No' }}</td>
+                <td>{{ mdl_course.format }}</td>
+                <td>{{ mdl_course.showgrades ? 'Yes' : 'No' }}</td>
+                <td>{{ mdl_course.newsitems }}</td>
+                <td>{{ mdl_course.startdate }}</td>
+                <td>{{ mdl_course.marker }}</td>
+                <td>{{ mdl_course.maxbytes }}</td>
+                <td>{{ mdl_course.legacyfiles }}</td>
+                <td>{{ mdl_course.showreports }}</td>
+                <td>{{ mdl_course.visible ? 'Yes' : 'No' }}</td>
+                <td>{{ mdl_course.visibleold ? 'Yes' : 'No' }}</td>
+                <td>{{ mdl_course.groupmode }}</td>
+                <td>{{ mdl_course.groupmodeforce }}</td>
+                <td>{{ mdl_course.defaultgroupingid }}</td>
+                <td>{{ mdl_course.lang }}</td>
+                <td>{{ mdl_course.calendartype }}</td>
+                <td>{{ mdl_course.theme }}</td>
+                <td>{{ mdl_course.timecreated }}</td>
+                <td>{{ mdl_course.timemodified }}</td>
+                <td>{{ mdl_course.requested ? 'Yes' : 'No' }}</td>
+                <td>{{ mdl_course.enablecompletion ? 'Yes' : 'No' }}</td>
+                <td>{{ mdl_course.completionnotify ? 'Yes' : 'No' }}</td>
+                <td>{{ mdl_course.cacherev }}</td>
+                <td>
+                    <a href="{{ path('mdl_course_show', {'id': mdl_course.id}) }}">show</a>
+                    <a href="{{ path('mdl_course_edit', {'id': mdl_course.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="31">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('mdl_course_new') }}">Create new</a>
+{% endblock %}
